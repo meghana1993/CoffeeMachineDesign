@@ -16,24 +16,29 @@ public class IngredientFactory {
                 ingredients.add(new Milk(4));
                 ingredients.add(new CoffeePowder(3));
                 break;
-            case 2: //chocolate milk
+            case 3: //chocolate milk
                 ingredients.add(new Sugar(2));
                 ingredients.add(new Milk(4));
                 ingredients.add(new ChocolatePowder(4));
                 ingredients.add(new Water(1));
+                ingredients.add(new Cream(2));
                 break;
-            case 3: // hot milk
-                ingredients.add(new Milk(1));
+            case 4: // hot milk
+                ingredients.add(new Milk(4));
                 break;
-            case 4: //hot water
-                ingredients.add(new Water(1));
+            case 5: //hot water
+                ingredients.add(new Water(10));
                 break;
-            case 5: //tea
+            case 2: //tea
                 ingredients.add(new Sugar(2));
                 ingredients.add(new Milk(2));
                 ingredients.add(new TeaPowder(4));
                 ingredients.add(new Water(2));
                 break;
+            case 6: // iced Tea
+                ingredients.add(new Sugar(2));
+                ingredients.add(new Lemon(2));
+                ingredients.add(new Water(2));
             default:
 
         }

@@ -1,10 +1,9 @@
 package com.machine.coffeemaker.service;
 
-import com.machine.coffeemaker.models.Ingredient;
 import com.machine.coffeemaker.enums.MenuEnum;
+import com.machine.coffeemaker.models.Ingredient;
 import com.machine.coffeemaker.repository.CoffeeMachineRepository;
 
-import java.util.List;
 import java.util.Map;
 
 public class CoffeeMakerServiceImpl implements CoffeeMakerService{
@@ -31,7 +30,7 @@ public class CoffeeMakerServiceImpl implements CoffeeMakerService{
 
     public MenuEnum[] getMenu(){
         MenuEnum[] menuItems = MenuEnum.values();
-       return menuItems;
+        return menuItems;
 
     }
 
@@ -77,8 +76,7 @@ public class CoffeeMakerServiceImpl implements CoffeeMakerService{
 
     @Override
     public double stockUp(int selectedIngredient, double toUpQuantity) {
-
-        return 0;
+        return coffeMachineRepo.updateStock(selectedIngredient, toUpQuantity);
     }
 
 }

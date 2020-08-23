@@ -8,23 +8,24 @@ import java.util.List;
 public enum MenuEnum {
 
 
-    Coffee(1, "Coffee",25.0),
-    TEA(2, "TEA",  20.0),
-    HOTCHOCOLATE(3, "Hot Chocolate",30.0),
-    MILK(4, "Milk", 15.0),
-    HOTWATER(5, "Hot Water",  5.0);
+    Coffee(1, "Coffee"),
+    TEA(2, "TEA"),
+    HOTCHOCOLATE(3, "Hot Chocolate"),
+    MILK(4, "Milk"),
+    HOTWATER(5, "Hot Water"),
+    ICEDTEA(6,"Iced Tea");
 
     private int id;
     private String name;
+    private List<Ingredient> listOfIngredients;
     private double price;
-    List<Ingredient> listOfIngredients;
 
 
-    MenuEnum(int id, String name, double price) {
+    MenuEnum(int id, String name) {
         this.id = id;
         this.name = name;
-        this.price = price;
         this.listOfIngredients= IngredientFactory.getIngredients(id);
+        this.price = calculatePrice(listOfIngredients);
     }
 
     public int getId() {
@@ -43,6 +44,14 @@ public enum MenuEnum {
         this.name = name;
     }
 
+    public List<Ingredient> getListOfIngredients() {
+        return listOfIngredients;
+    }
+
+    public void setListOfIngredients(List<Ingredient> listOfIngredients) {
+        this.listOfIngredients = listOfIngredients;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -51,11 +60,13 @@ public enum MenuEnum {
         this.price = price;
     }
 
-    public List<Ingredient> getListOfIngredients() {
-        return listOfIngredients;
+    public double calculatePrice(List<Ingredient> ingredients) {
+        double cost = 0d;
+        for (Ingredient ing : ingredients) {
+            cost += ing.getQuantity() * ing.getIngredient().getPrice();
+        }
+        return cost;
     }
 
-    public void setListOfIngredients(List<Ingredient> listOfIngredients) {
-        this.listOfIngredients = listOfIngredients;
-    }
+
 }

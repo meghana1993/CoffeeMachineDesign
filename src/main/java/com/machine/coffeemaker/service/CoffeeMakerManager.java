@@ -1,10 +1,8 @@
 package com.machine.coffeemaker.service;
 
-import com.machine.coffeemaker.enums.IngredientEnum;
-import com.machine.coffeemaker.models.Ingredient;
 import com.machine.coffeemaker.enums.MenuEnum;
+import com.machine.coffeemaker.models.Ingredient;
 
-import java.util.List;
 import java.util.Map;
 
 public class CoffeeMakerManager {
@@ -44,7 +42,7 @@ public class CoffeeMakerManager {
         for(Map.Entry<Integer, Double> ing : ingredientMap.entrySet()){
             str.append(ing.getKey());
             str.append(".");
-            str.append(IngredientEnum.getName(ing.getKey()));
+            str.append(Ingredient.IngredientEnum.getName(ing.getKey()));
             str.append(":");
             str.append(ing.getValue());
             str.append('\n');
