@@ -7,6 +7,12 @@ import java.util.Scanner;
 public class Driver {
 
     public static void main(String[] args){
+
+        long x = ((Integer.MAX_VALUE)%1000000007 * (Integer.MAX_VALUE)%1000000007)%1000000007;
+        System.out.println(x);
+        System.out.println(Long.MAX_VALUE%1000000007);
+
+
         Scanner sc = new Scanner(System.in);
         CoffeeMakerManager manager = new CoffeeMakerManager();
 
